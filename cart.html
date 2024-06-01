@@ -1,0 +1,96 @@
+
+
+{% extends "home.html" %}
+{% load static %}
+{% block title %}Cart Page{% endblock title %}
+  <!-- <link rel="stylesheet" href="../static/about.css"> -->
+  {% block css %}
+  <link rel="stylesheet" href="{% static 'cart.css' %}">
+  <style>
+    body{
+      background-image: url('../static/img/bg.png');
+    }
+  </style>
+  {% endblock css %}
+
+
+<!-- yha se body aa rhi hai... -->
+{% block container %}
+<body style="margin-top:65px;">
+{% if messages %}
+  {% for message in messages %}
+    <div style="position: absolute;top: 60px;left: 0;width: 100%;z-index: 1;font-size: 20px;" class="alert text-center alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+     <strong>{{ message }}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {% endfor %}
+{% endif %}
+
+{% if items %}
+<h1 class="container text-center" style="font-family:Arial, Helvetica, sans-serif " >Cart Items</h1>
+
+  {% for i in items  %}
+
+  <div   class="container card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img style='border-bottom-right-radius:50%' src={{i.img1}} class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{i.name}}</h5>
+          <p class="card-text">{{i.line}}</p>
+          <p class="card-text"><small class="text-body-secondary">Added at: {{i.date}}</small></p>
+          <a href="/deleteCart/{{i.id}}"><button class="btn btn-danger" >Remove Cart</button></a>
+          <a href="/buyCart/{{i.pet_id}}"><button class="btn btn-success" >Purchase</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+{% else %}
+          <h1 class="card-title text-center p-5">Oops,no cart Items Added Yet..!</h1>
+
+{% endif %}
+  <div id="box" class="box"></div>
+
+<!-- ------------------------------------------------------------------ -->
+
+<script src="https://www.paypal.com/sdk/js?client-id=AdAE9pWHQzRCNItQH5C2qmXBm33fcdUFDIfYb4y3Y8F9HjDvzjxXdGCsPS5dQp_zGKqaMyja9Zr49qzi&currency=USD"></script>
+
+<script>
+      let box = document.getElementById('box');
+      window.addEventListener('mousemove', (e) => {
+        box.style.top = e.pageY + 'px';
+        box.style.left = e.pageX + 'px';
+        box.style.display = 'block';
+      });
+      // Render the PayPal button into #paypal-button-container
+      paypal.Buttons({
+
+          // Set up the transaction
+          createOrder: function (data, actions) {
+              return actions.order.create({
+                  purchase_units: [{
+                      amount: {
+                          value: '{{price}}'
+                      }
+                  }]
+              });
+          },
+
+          // Finalize the transaction
+          onApprove: function (data, actions) {
+              return actions.order.capture().then(function (details) {
+                  // Show a success message to the buyer
+                  alert('Transaction completed by ' + details.payer.name
+                      .given_name + '!');
+              });
+          }
+
+
+      }).render('#paypal-button-container');
+  </script>
+</body>
+{% endblock container %}
+

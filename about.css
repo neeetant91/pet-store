@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    /* cursor: none; */
+  }
+  body{
+    background-image: url('./img/bg.png');
+  }
+
+  /* css to container  */
+  .container-fluid {
+    overflow-x: hidden;
+  }
+
+  .background {
+    background-color: rgb(0, 0, 0);
+    width: 300px;
+
+  }
+
+  /* css to img */
+  /* css to table */
+  table {
+    position: absolute;
+    top: 100px;
+    left: 30%;
+    font-size: 36px;
+    font-weight: 800;
+    /* color: red; */
+    text-shadow:5px 6px 20px black;
+    font-family: 'Courier New', Courier, monospace;
+    z-index: 5;
+    /* background-color: red; */
+  }
+  table .line{
+    font-size: 24px;
+    text-shadow: 7px 8px 20px black;
+    text-transform: capitalize;
+  }
+  table .name{
+    font-size: 40px;
+    color: red;
+  }
+  table .price{
+    color: green;
+  }
+
+  table td{
+    padding: 10px;
+  }
+  table .cart{
+    margin-top: 100px;
+
+  }
+  table .addcart{
+    font-size: 20px;
+    padding-left: 10px;
+    /* box-shadow: 21px 10px 19px 10px red; */
+  }
+  table .buy{
+    font-size: 20px;
+    padding-left: 50px;
+  }
+  table .btn{
+    font-weight: 900;
+    box-shadow:  5px 7px 20px black;
+  }
+  table .btn:hover{
+    /* background-color: red; */
+    /* font-weight: 900; */
+    font-style: italic;
+  }
+/* css to about */
+  .about {
+    color: green;
+    font-size: 36px;
+    padding: 5px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight:bolder;
+    text-shadow: 7px 6px 20px rgb(10, 10, 10);
+    text-decoration:overline;
+  }
+
+
+/* css to h3 */
+  h3 {
+    padding: 30px;
+    padding-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 36px;
+    font-style: italic;
+    color: black;
+    font-weight: 600;
+    text-shadow: 5px 6px 10px rgba(13, 12, 12, 0.936);
+  }
+
+  /* css to carousel */
+  .container-fluid .img {
+    height: 500px;
+    width: 100%;
+    z-index: -5;
+    opacity: .8;
+    height: 300px;
+    width: 300px;
+
+  }
+
+/* css to box */
+
+#box{
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  /* height: 10px; */
+  /* width: 10px; */
+  /* top: 10px; */
+  /* left: 10px; */
+  transform: translateX(-50%) translateY(-50%);
+  /* background-color: rgb(18, 18, 17); */
+  box-shadow: 0 0 50px 30px rgb(9, 9, 9);
+  border-radius: 50%;
+  /* background: url("./img/face.png")center center/cover fixed; */
+  /* background: url("https://img.freepik.com/premium-psd/beautiful-dog-with-opened-mouth-transparent-background_927015-531.jpg")center center/cover fixed; */
+  /* border:dashed 5px black ; */
+
+  z-index: 1;
+}

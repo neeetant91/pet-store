@@ -1,0 +1,132 @@
+/* css to root  */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    /* cursor: none; */
+}
+.home{
+    border: none;
+    font-weight: 700;
+}
+
+
+/* css to container  */
+.container-fluid{
+    overflow-x: hidden;
+
+}
+.background{
+    background-image:url('./img/bg.png');
+    height: 100%;
+}
+/* css to img */
+.container-fluid h1,h2{
+    position: absolute;
+    top: 150px;
+    left: 35%;
+    font-size: 48px;
+    font-weight: 800;
+    color: rgb(0, 255, 21);
+    text-shadow: 7px 8px 8px black;
+    font-family: 'Preahvihear', sans-serif;
+    z-index: 5;
+    /* background-color: red; */
+}
+
+.container-fluid h2{
+    top: 200px;
+    left: 36%;
+    color: rgb(210, 113, 113);
+    font-size: 24px;
+    font-family: 'Syne Mono';
+}
+.h3{
+    /* color: red; */
+    background: linear-gradient(to right, rgb(171, 206, 171) -20%,#222 80%);
+    padding-left: 40%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* css to carousel */
+.container-fluid .img{
+    margin-top: 5%;
+    height: 500px;
+    width: 100%;
+    /* z-index: -5; */
+    /* opacity: .8; */
+    border-radius: 2%;
+
+}
+
+/* card ka code likha hai */
+.row{
+    padding: 50px;
+
+}
+.row a{
+    /* color: rgba(255, 0, 0, 0.695); */
+    text-decoration: none;
+    z-index: 5;
+}
+.col{
+    overflow: hidden;
+    height: 400px;
+    text-shadow: 5px 3px 10px black;
+    font-family:'Syne Mono';
+    transition: filter .2s ease;
+    background-color: transparent;
+    transition: all .2s ease-in-out;
+}
+.card{
+    background-color: transparent;
+    border: none;
+
+}
+.card-body{
+    background:transparent;
+}
+.col:hover{
+    background:rgba(0, 0, 0, 0.284);
+
+}
+.col img{
+    height: 200px;
+}
+.col:hover{
+    filter: grayscale(100%);
+}
+.card-title{
+font-weight: 800;
+}
+.card-text{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 900;
+}
+
+/* follow mouse css karunga ji */
+
+
+#box{
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    /* height: 10px; */
+    /* width: 10px; */
+    /* top: 10px; */
+    /* left: 10px; */
+    transform: translateX(-50%) translateY(-50%);
+    /* background-color: rgb(18, 18, 17); */
+    box-shadow: 0 0 50px 30px black;
+    border-radius: 50%;
+    /* background: url("./img/face.png")center center/cover fixed; */
+    /* background: url("https://img.freepik.com/premium-psd/beautiful-dog-with-opened-mouth-transparent-background_927015-531.jpg")center center/cover fixed; */
+    /* border:dashed 5px black ; */
+
+    z-index: 2;
+
+ }
+
+
+

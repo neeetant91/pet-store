@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AddPet</title>
+    <link rel="stylesheet" href="../static/addpet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1>Adding Pet</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-floating  mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="name" placeholder="PetName">
+            <label for="floatingInput">PetName:</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="floatingPassword" name="line" placeholder="Title">
+            <label for="floatingPassword">Title:</label>
+          </div><br>
+          <div class="form-floating">
+            <select class="form-control" name="category" >
+            <option value="dog">dog</option>
+            <option value="cat">cat</option>
+            <option value="snake">snake</option>
+            <option value="bird">bird</option>
+            <option value="lizard">lizard</option>
+            <option value="cow">cow</option>
+            <!-- <option value="cock">cock</option> -->
+            <option value="goat">goat</option>
+            <option value="buffalo">buffalo</option>
+            <option value="wolf">wolf</option>
+            <option value="bear">bear</option>
+            </select>
+            <!-- <input type="text" class="form-control" id="floatingPassword" value="dog" name="category" placeholder="Category">
+            <label for="floatingPassword">Category:</label> -->
+          </div><br>
+
+          <div class="form-floating">
+              <textarea class="form-control" name="desc" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              <label for="floatingTextarea2">Description:</label>
+            </div><br>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingPassword" name="img1" placeholder="Img1">
+              <label for="floatingPassword">Img1:</label>
+            </div><br>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingPassword" name="img2" placeholder="Img2">
+              <label for="floatingPassword">Img2:</label>
+            </div><br>
+            <div class="form-floating">
+              <input type="text" class="form-control" id="floatingPassword" name="img3" placeholder="Img3">
+              <label for="floatingPassword">Img3:</label>
+            </div><br>
+            <button type="submit" class="btn btn-primary">Add Pet</button>
+    </form>
+            <a href="/"><button class="btn btn-success">Home</button></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
